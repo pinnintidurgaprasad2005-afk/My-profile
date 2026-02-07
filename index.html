@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pinninti Durga Prasad | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">DP.</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#interpersonal">Interpersonal</a>
+	<a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="about">
+<center>
+  <img src="profile.jpg" class="profile-img" alt="Profile">
+
+</center>
+  <span class="status">Available for Opportunities</span>
+
+  <h1>Hi, I'm <span>Pinninti Durga Prasad</span></h1>
+  <h2 id="role"></h2>
+
+  <p>
+    Computer Science Engineering student passionate about  
+    Full Stack Development, Python and building clean, scalable web applications.
+  </p>
+
+  <a href="resume.pdf" class="btn" target="_blank">View Resume</a>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+
+  <div class="skills">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">C</div>
+    <div class="skill">Python</div>
+    <div class="skill">Java</div>
+  </div>
+
+  <div class="tech">
+    <h3>Technical Competencies</h3>
+    <ul>
+      <li><b>OS:</b> Windows | Linux | Mac OS</li>
+      <li><b>Languages:</b> C | Python | Java | HTML | CSS | JavaScript</li>
+      <li><b>Databases:</b> MS Access | MySQL | Firebase</li>
+      <li><b>Other Interests:</b> Full Stack Development</li>
+    </ul>
+  </div>
+</section>
+
+<!-- INTERPERSONAL SKILLS -->
+<section id="interpersonal">
+  <h2 class="section-title">Interpersonal Skills</h2>
+
+  <div class="interpersonal-list">
+    <span class="skill">Team Leadership</span>
+    <span class="skill">Good Communication</span>
+    <span class="skill">Quick Learner</span>
+    <span class="skill">Positive Attitude</span>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 class="section-title">Education</h2>
+
+  <div class="projects">
+
+    <!-- BTECH -->
+    <div class="card">
+      <h3>B.Tech – Computer Science Engineering</h3>
+      <p>
+        <b>Madanapalle Institute of Technology and Science</b><br>
+        JNTU Anantapur<br>
+        <span>2025 – 2028 (Pursuing)</span>
+      </p>
+    </div>
+
+    <!-- DIPLOMA -->
+    <div class="card">
+      <h3>Diploma – Computer Science Engineering</h3>
+      <p>
+        <b>Bapatla Engineering College</b><br>
+        Andhra Pradesh<br>
+        SBTET<br>
+        <span>2022 – 2025</span><br>
+        <b>CGPA:</b> 7.5
+      </p>
+    </div>
+
+    <!-- SSC -->
+    <div class="card">
+      <h3>SSC (10th Class)</h3>
+      <p>
+        <b>GDETMCH High School</b><br>
+        Patamata, Vijayawada<br>
+        Board of Secondary Education, AP<br>
+        <span>2022</span><br>
+        <b>Percentage:</b> 72%
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects">
+    <div class="card">
+      <h3>Voice Recognition System</h3>
+      <p>
+        Python-based system that recognizes human voice commands  
+        and performs actions using speech recognition.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Personal Portfolio Website</h3>
+      <p>
+        Clean and modern personal website built using  
+        HTML, CSS and JavaScript with animations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <h2 class="section-title">Certifications</h2>
+
+  <div class="cert-grid">
+
+    <div class="cert-card" onclick="openCert('nptl-python.png')">
+  <img src="nptl-python.png" alt="NPTEL Python Certificate">
+  <p>Python (NPTEL)</p>
+</div>
+
+<div class="cert-card" onclick="openCert('cert-python.png')">
+  <img src="cert-python.png" alt="LearnX Python Certificate">
+  <p>LearnX Python</p>
+</div>
+
+<div class="cert-card" onclick="openCert('BM_python.png')">
+  <img src="BM_python.png" alt="Brilliant Minds Python">
+  <p>Brilliant Minds Python</p>
+</div>
+
+<div class="cert-card" onclick="openCert('networking.png')">
+  <img src="networking.png" alt="Networking Internship">
+  <p>Networking Internship</p>
+</div>
+
+<div class="cert-card" onclick="openCert('nasscom-ai.png')">
+  <img src="nasscom-ai.png" alt="NASSCOM AI">
+  <p>AI (NASSCOM)</p>
+</div>
+
+<div class="cert-card" onclick="openCert('udamy-ai.png')">
+  <img src="udamy-ai.png" alt="Udemy AI">
+  <p>AI (Udemy)</p>
+</div>
+
+<div class="cert-card" onclick="openCert('afilate-Mark.png')">
+  <img src="afilate-Mark.png" alt="Affiliate Marketing">
+  <p>Affiliate Marketing</p>
+</div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATE MODAL -->
+<div class="modal" id="modal" onclick="closeCert()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="closeCert()">×</span>
+    <img id="modalImg" alt="Certificate Preview">
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+
+  <p>Email: pinnintidurgaprasad2005@gmail.com</p>
+  <p>Mobile: 7569595067</p>
+  <p>
+    GitHub:
+    <a href="https://github.com/pinnintidurgaprasad2005-afk" target="_blank">
+      pinnintidurgaprasad2005-afk
+    </a>
+  </p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
