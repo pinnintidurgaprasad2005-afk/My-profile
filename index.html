@@ -1,249 +1,1424 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Pinninti Durga Prasad | Portfolio</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="description"
+        content="Portfolio of Pinninti Durga Prasad, Computer Science Engineering student, AWS Certified Cloud Practitioner, and aspiring Java developer.">
+
+  <title>Pinninti Durga Prasad | Developer Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #142b4a;
+      --blue: #2457a7;
+      --blue-light: #edf4ff;
+      --text: #263447;
+      --muted: #66758a;
+      --border: #e1e7ef;
+      --background: #ffffff;
+      --section: #f7f9fc;
+      --radius: 12px;
+      --width: 1080px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--width), 90%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 78px 0;
+    }
+
+    .section:nth-of-type(even) {
+      background: var(--section);
+    }
+
+    .section-heading {
+      margin-bottom: 35px;
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--blue);
+      font-size: .77rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    h1, h2, h3 {
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.5rem);
+      letter-spacing: -.8px;
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      color: var(--muted);
+    }
+
+    /* HEADER */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--navy);
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      font-size: .84rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      color: var(--navy);
+    }
+
+    /* BUTTONS */
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 19px;
+      border-radius: 7px;
+      font-weight: 700;
+      font-size: .88rem;
+      border: 1px solid var(--blue);
+      transition: background .2s, color .2s;
+    }
+
+    .button-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .button-secondary {
+      color: var(--blue);
+      background: white;
+    }
+
+    .button-secondary:hover {
+      background: var(--blue-light);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 85px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr .75fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .availability {
+      display: inline-block;
+      padding: 6px 11px;
+      border: 1px solid #c9dfd2;
+      border-radius: 5px;
+      background: #f0f9f3;
+      color: #246b43;
+      font-size: .77rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4.1rem);
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-role {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 27px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .profile-wrapper {
+      padding: 9px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 15px 45px rgba(20,43,74,.09);
+    }
+
+    .profile-img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 10px;
+      background: var(--section);
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .fact {
+      border-left: 3px solid var(--blue);
+      padding: 5px 0 5px 12px;
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    /* CARDS */
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+    }
+
+    .card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .card:hover {
+      border-color: #b8cbea;
+    }
+
+    /* SKILLS */
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--blue-light);
+      color: var(--navy);
+      border-radius: 5px;
+      padding: 6px 9px;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    /* PROJECTS */
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .project-number {
+      color: var(--blue);
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    .text-link {
+      color: var(--blue);
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+    /* EDUCATION */
+
+    .education-list {
+      display: grid;
+      gap: 17px;
+    }
+
+    .education-card {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 22px;
+      padding: 24px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .education-date {
+      color: var(--blue);
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    .education-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 5px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    /* CERTIFICATES */
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .cert-card {
+      padding: 13px;
+      text-align: left;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .cert-card:hover,
+    .cert-card:focus-visible {
+      border-color: var(--blue);
+      outline: 2px solid transparent;
+    }
+
+    .cert-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      background: #f2f4f7;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .cert-card strong {
+      display: block;
+      color: var(--navy);
+      font-size: .9rem;
+      margin-bottom: 4px;
+    }
+
+    .cert-card span {
+      display: block;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    /* INTERPERSONAL */
+
+    .interpersonal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .interpersonal-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 19px 10px;
+      text-align: center;
+      font-size: .86rem;
+      font-weight: 600;
+    }
+
+    /* CONTACT */
+
+    .contact-panel {
+      background: var(--navy);
+      color: white;
+      padding: 38px;
+      border-radius: 14px;
+    }
+
+    .contact-panel h2 {
+      color: white;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 12px;
+    }
+
+    .contact-panel p {
+      color: #d0d9e7;
+      margin-bottom: 23px;
+    }
+
+    .contact-panel .button {
+      background: white;
+      color: var(--navy);
+      border-color: white;
+    }
+
+    .contact-panel .button:hover {
+      background: var(--blue-light);
+    }
+
+    .contact-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .contact-link {
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 8px;
+      padding: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-link small {
+      display: block;
+      color: #c3d0e2;
+      margin-bottom: 4px;
+    }
+
+    .contact-link span {
+      font-size: .86rem;
+      color: white;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: .82rem;
+    }
+
+    /* CERTIFICATE MODAL */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      padding: 25px;
+      background: rgba(10,20,35,.9);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      width: min(900px, 100%);
+    }
+
+    .modal-content img {
+      max-height: 85vh;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -15px;
+      right: -12px;
+      width: 40px;
+      height: 40px;
+      background: white;
+      color: var(--navy);
+      border: 0;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: .76rem;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .skill-grid,
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .section {
+        padding: 58px 0;
+      }
+
+      .nav {
+        min-height: 65px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        padding: 15px 5%;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 0;
+        font-size: .9rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .profile-wrapper {
+        width: min(260px, 80%);
+        margin: auto;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.35rem, 9vw, 3.4rem);
+        letter-spacing: -1.5px;
+      }
+
+      .hero-facts {
+        gap: 7px;
+      }
+
+      .fact {
+        padding-left: 8px;
+      }
+
+      .fact strong {
+        font-size: .88rem;
+      }
+
+      .fact span {
+        font-size: .68rem;
+      }
+
+      .card-grid,
+      .skill-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-card {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .interpersonal-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-panel {
+        padding: 25px;
+      }
+
+      .contact-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <div class="logo">DP.</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#interpersonal">Interpersonal</a>
-	<a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header class="header">
+    <div class="container nav">
 
-<!-- HERO -->
-<section class="hero" id="about">
-<center>
-  <img src="profile.jpg" class="profile-img" alt="Profile">
+      <a href="#home" class="logo" aria-label="Home">
+        DP<span>.</span>
+      </a>
 
-</center>
-  <span class="status">Available for Opportunities</span>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        aria-label="Open navigation">
+        Menu
+      </button>
 
-  <h1>Hi, I'm <span>Pinninti Durga Prasad</span></h1>
-  <h2 id="role"></h2>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-  <p>
-    Computer Science Engineering student passionate about  
-    Full Stack Development, Python and building clean, scalable web applications.
-  </p>
+    </div>
+  </header>
 
-  <a href="resume1.pdf" class="btn" target="_blank">View Resume</a>
-</section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <h2 class="section-title">Skills</h2>
+  <main>
 
-  <div class="skills">
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">C</div>
-    <div class="skill">Python</div>
-    <div class="skill">Java</div>
-  </div>
+    <!-- HERO -->
 
-  <div class="tech">
-    <h3>Technical Competencies</h3>
-    <ul>
-      <li><b>OS:</b> Windows | Linux | Mac OS</li>
-      <li><b>Languages:</b> C | Python | Java | HTML | CSS | JavaScript</li>
-      <li><b>Databases:</b> MS Access | MySQL | Firebase</li>
-      <li><b>Other Interests:</b> Full Stack Development</li>
-    </ul>
-  </div>
-</section>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
 
-<!-- INTERPERSONAL SKILLS -->
-<section id="interpersonal">
-  <h2 class="section-title">Interpersonal Skills</h2>
+        <div>
+          <span class="availability">
+            Open to Internship Opportunities
+          </span>
 
-  <div class="interpersonal-list">
-    <span class="skill">Team Leadership</span>
-    <span class="skill">Good Communication</span>
-    <span class="skill">Quick Learner</span>
-    <span class="skill">Positive Attitude</span>
-  </div>
-</section>
+          <h1>
+            Hello, I'm<br>
+            <span>Pinninti Durga Prasad</span>
+          </h1>
 
-<!-- EDUCATION -->
-<section id="education">
-  <h2 class="section-title">Education</h2>
+          <p class="hero-role">
+            Computer Science Engineering Student |
+            Java Development | AWS Cloud
+          </p>
 
-  <div class="projects">
+          <p class="hero-description">
+            I am pursuing a B.Tech in Computer Science Engineering
+            and developing my skills in Java programming, software
+            development, and cloud computing. I am interested in
+            building practical applications and gaining hands-on
+            engineering experience.
+          </p>
 
-    <!-- BTECH -->
-    <div class="card">
-      <h3>B.Tech – Computer Science Engineering</h3>
-      <p>
-        <b>Madanapalle Institute of Technology and Science</b><br>
-        JNTU Anantapur<br>
-        <span>2025 – 2028 (Pursuing)</span>
-      </p>
+          <div class="hero-actions">
+            <a class="button button-primary"
+               href="resume1.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Resume
+            </a>
+
+            <a class="button button-secondary" href="#projects">
+              View Projects
+            </a>
+          </div>
+
+          <div class="hero-facts">
+            <div class="fact">
+              <strong>2028</strong>
+              <span>Expected Graduation</span>
+            </div>
+
+            <div class="fact">
+              <strong>AWS</strong>
+              <span>Cloud Practitioner Certified</span>
+            </div>
+
+            <div class="fact">
+              <strong>Java</strong>
+              <span>Development Focus</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-wrapper">
+          <img
+            class="profile-img"
+            src="profile.jpeg"
+            alt="Pinninti Durga Prasad"
+            fetchpriority="high">
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">About Me</span>
+          <h2 class="section-title">Professional Profile</h2>
+
+          <p class="section-description">
+            A Computer Science Engineering student building a
+            foundation in software development and cloud technologies.
+          </p>
+        </div>
+
+        <div class="card-grid">
+
+          <article class="card">
+            <h3>Background</h3>
+            <p>
+              I am pursuing a B.Tech in Computer Science Engineering
+              at Madanapalle Institute of Technology and Science.
+              I have an academic background in computer science
+              through diploma studies and am continuing to develop
+              my programming and technical skills.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Career Interests</h3>
+            <p>
+              My interests include Java development, backend
+              engineering, database-driven applications, and AWS
+              cloud technologies. I am focused on improving my
+              practical skills through coding and project work.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section class="section" id="skills">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Technical Expertise</span>
+          <h2 class="section-title">Skills & Technologies</h2>
+
+          <p class="section-description">
+            Technologies I have studied or worked with.
+          </p>
+        </div>
+
+        <div class="skill-grid">
+
+          <article class="skill-card">
+            <h3>Programming Languages</h3>
+            <div class="tags">
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+              <span class="tag">C</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Web Technologies</h3>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Databases</h3>
+            <div class="tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">MS Access</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Cloud Computing</h3>
+            <div class="tags">
+              <span class="tag">AWS Fundamentals</span>
+              <span class="tag">Amazon EC2</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Operating Systems</h3>
+            <div class="tags">
+              <span class="tag">Windows</span>
+              <span class="tag">Linux</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Professional Skills</h3>
+            <div class="tags">
+              <span class="tag">Communication</span>
+              <span class="tag">Teamwork</span>
+              <span class="tag">Leadership</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="section" id="projects">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Practical Work</span>
+          <h2 class="section-title">Projects</h2>
+
+          <p class="section-description">
+            Projects I have worked on. Explore my GitHub profile
+            for available source code.
+          </p>
+        </div>
+
+        <div class="card-grid">
+
+          <article class="card project-card">
+            <span class="project-number">PROJECT 01 · PYTHON</span>
+
+            <h3>Voice Recognition System</h3>
+
+            <p>
+              A Python-based project designed to recognize spoken
+              commands and perform actions using speech-recognition
+              functionality.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Speech Recognition</span>
+            </div>
+
+            <div class="project-links">
+              <a class="text-link"
+                 href="https://github.com/pinnintidurgaprasad2005-afk"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Explore GitHub ↗
+              </a>
+            </div>
+          </article>
+
+
+          <article class="card project-card">
+            <span class="project-number">PROJECT 02 · WEB</span>
+
+            <h3>Personal Portfolio Website</h3>
+
+            <p>
+              A personal website built using HTML, CSS, and
+              JavaScript to present my background, skills,
+              projects, certifications, and contact information.
+            </p>
+
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+
+            <div class="project-links">
+              <a class="text-link"
+                 href="https://github.com/pinnintidurgaprasad2005-afk"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Explore GitHub ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="section-description" style="margin-top:22px">
+          Future project: Water Quality Monitoring System using
+          Java, Spring Boot, and MySQL. This project is not yet
+          implemented and is therefore not presented as completed work.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section class="section" id="education">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Academic Background</span>
+          <h2 class="section-title">Education</h2>
+        </div>
+
+        <div class="education-list">
+
+          <article class="education-card">
+            <div class="education-date">2025 – 2028</div>
+
+            <div>
+              <h3>B.Tech — Computer Science Engineering</h3>
+              <p>Madanapalle Institute of Technology and Science</p>
+              <p>JNTU Anantapur</p>
+              <p>Currently pursuing</p>
+            </div>
+          </article>
+
+          <article class="education-card">
+            <div class="education-date">2022 – 2025</div>
+
+            <div>
+              <h3>Diploma — Computer Science Engineering</h3>
+              <p>Bapatla Engineering College, Andhra Pradesh</p>
+              <p>SBTET</p>
+              <p>CGPA: 7.5</p>
+            </div>
+          </article>
+
+          <article class="education-card">
+            <div class="education-date">2022</div>
+
+            <div>
+              <h3>SSC — 10th Class</h3>
+              <p>GDETMCH High School, Patamata, Vijayawada</p>
+              <p>Percentage: 72%</p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CERTIFICATIONS -->
+
+    <section class="section" id="certifications">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Credentials</span>
+          <h2 class="section-title">Certifications</h2>
+
+          <p class="section-description">
+            Select a certificate to view its image.
+          </p>
+        </div>
+
+        <div class="cert-grid">
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="AWS_cloud_practioner.png"
+                  data-title="AWS Cloud Practitioner">
+            <img src="AWS_cloud_practioner.png"
+                 alt="AWS Cloud Practitioner certificate"
+                 loading="lazy">
+            <strong>AWS Cloud Practitioner</strong>
+            <span>Amazon Web Services</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="infosys_cloud_essentails.png"
+                  data-title="Infosys Cloud Essentials">
+            <img src="infosys_cloud_essentails.png"
+                 alt="Infosys Cloud Essentials certificate"
+                 loading="lazy">
+            <strong>Cloud Essentials</strong>
+            <span>Infosys Springboard</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="networking.png"
+                  data-title="Networking Internship">
+            <img src="networking.png"
+                 alt="Networking internship certificate"
+                 loading="lazy">
+            <strong>Networking Internship</strong>
+            <span>Networking</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="cert-python.png"
+                  data-title="LearnX Python">
+            <img src="cert-python.png"
+                 alt="LearnX Python certificate"
+                 loading="lazy">
+            <strong>Python</strong>
+            <span>LearnX</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="nptl-python.png"
+                  data-title="NPTEL Python">
+            <img src="nptl-python.png"
+                 alt="NPTEL Python certificate"
+                 loading="lazy">
+            <strong>Python</strong>
+            <span>NPTEL</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="nasscom-ai.png"
+                  data-title="NASSCOM AI">
+            <img src="nasscom-ai.png"
+                 alt="NASSCOM AI certificate"
+                 loading="lazy">
+            <strong>Artificial Intelligence</strong>
+            <span>NASSCOM</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="udamy-ai.png"
+                  data-title="Udemy AI">
+            <img src="udamy-ai.png"
+                 alt="Udemy AI certificate"
+                 loading="lazy">
+            <strong>Artificial Intelligence</strong>
+            <span>Udemy</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="generative_ai.png"
+                  data-title="Generative AI">
+            <img src="generative_ai.png"
+                 alt="Generative AI certificate"
+                 loading="lazy">
+            <strong>Generative AI</strong>
+            <span>Generative AI</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="Hackerank-java-basic.png"
+                  data-title="HackerRank Java Basic">
+            <img src="Hackerank-java-basic.png"
+                 alt="HackerRank Java Basic certificate"
+                 loading="lazy">
+            <strong>Java Basic</strong>
+            <span>HackerRank</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="java-fsd-eduskills.png"
+                  data-title="Java Full Stack">
+            <img src="java-fsd-eduskills.png"
+                 alt="Java Full Stack certificate"
+                 loading="lazy">
+            <strong>Java Full Stack</strong>
+            <span>EduSkills</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="Nasscom-Acquiring data.png"
+                  data-title="NASSCOM Acquiring Data">
+            <img src="Nasscom-Acquiring data.png"
+                 alt="NASSCOM Acquiring Data certificate"
+                 loading="lazy">
+            <strong>Acquiring Data</strong>
+            <span>NASSCOM</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="ACITE_JFSD.jpeg"
+                  data-title="Java Full Stack AICTE">
+            <img src="ACITE_JFSD.jpeg"
+                 alt="Java Full Stack certificate"
+                 loading="lazy">
+            <strong>Java Full Stack</strong>
+            <span>AICTE</span>
+          </button>
+
+          <button class="cert-card"
+                  type="button"
+                  data-cert="nptel-pedt.png"
+                  data-title="NPTEL PEDT">
+            <img src="nptel-pedt.png"
+                 alt="NPTEL PEDT certificate"
+                 loading="lazy">
+            <strong>PEDT</strong>
+            <span>NPTEL</span>
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- INTERPERSONAL SKILLS -->
+
+    <section class="section" id="interpersonal">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Professional Attributes</span>
+          <h2 class="section-title">Interpersonal Skills</h2>
+        </div>
+
+        <div class="interpersonal-grid">
+          <div class="interpersonal-item">Team Leadership</div>
+          <div class="interpersonal-item">Communication</div>
+          <div class="interpersonal-item">Quick Learning</div>
+          <div class="interpersonal-item">Teamwork</div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="section" id="contact">
+      <div class="container">
+
+        <div class="contact-panel">
+          <h2>Let's Connect</h2>
+
+          <p>
+            I am interested in suitable software development and
+            cloud-related internship opportunities.
+          </p>
+
+          <a class="button"
+             href="mailto:pinnintidurgaprasad2005@gmail.com">
+            Contact Me
+          </a>
+
+          <div class="contact-links">
+
+            <a class="contact-link"
+               href="mailto:pinnintidurgaprasad2005@gmail.com">
+              <small>Email</small>
+              <span>pinnintidurgaprasad2005@gmail.com</span>
+            </a>
+
+            <a class="contact-link"
+               href="https://github.com/pinnintidurgaprasad2005-afk"
+               target="_blank"
+               rel="noopener noreferrer">
+              <small>GitHub</small>
+              <span>View GitHub Profile ↗</span>
+            </a>
+
+            <a class="contact-link"
+               href="resume1.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+              <small>Resume</small>
+              <span>View Resume ↗</span>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- CERTIFICATE PREVIEW -->
+
+  <div class="modal"
+       id="certificateModal"
+       role="dialog"
+       aria-modal="true"
+       aria-hidden="true"
+       aria-label="Certificate preview">
+
+    <div class="modal-content">
+      <button class="modal-close"
+              id="modalClose"
+              type="button"
+              aria-label="Close certificate preview">
+        &times;
+      </button>
+
+      <img id="modalImage" src="" alt="Certificate preview">
     </div>
 
-    <!-- DIPLOMA -->
-    <div class="card">
-      <h3>Diploma – Computer Science Engineering</h3>
+  </div>
+
+
+  <footer>
+    <div class="container">
       <p>
-        <b>Bapatla Engineering College</b><br>
-        Andhra Pradesh<br>
-        SBTET<br>
-        <span>2022 – 2025</span><br>
-        <b>CGPA:</b> 7.5
+        © <span id="year"></span> Pinninti Durga Prasad.
+        All rights reserved.
       </p>
     </div>
-
-    <!-- SSC -->
-    <div class="card">
-      <h3>SSC (10th Class)</h3>
-      <p>
-        <b>GDETMCH High School</b><br>
-        Patamata, Vijayawada<br>
-        Board of Secondary Education, AP<br>
-        <span>2022</span><br>
-        <b>Percentage:</b> 72%
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <h2 class="section-title">Projects</h2>
-
-  <div class="projects">
-    <div class="card">
-      <h3>Voice Recognition System</h3>
-      <p>
-        Python-based system that recognizes human voice commands  
-        and performs actions using speech recognition.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Personal Portfolio Website</h3>
-      <p>
-        Clean and modern personal website built using  
-        HTML, CSS and JavaScript with animations.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <h2 class="section-title">Certifications</h2>
-
-  <div class="cert-grid">
+  </footer>
 
 
-<div class="cert-card" onclick="openCert('AWS_cloud_practioner.png')">
-  <img src="AWS_cloud_practioner.png" alt="AWS Cloud Practitioner">
-  <p>AWS Cloud Practitioner</p>
-</div>
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-<div class="cert-card" onclick="openCert('infosys_cloud_essentails.png')">
-  <img src="infosys_cloud_essentails.png" alt="Infosys Springboards Cloud Essentias">
-  <p>Infosys Springboards Cloud Essentias</p>
-</div>
-	  
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
 
-<div class="cert-card" onclick="openCert('networking.png')">
-  <img src="networking.png" alt="Networking Internship">
-  <p>Networking Internship</p>
-</div>
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Close navigation' : 'Open navigation'
+      );
 
-<div class="cert-card" onclick="openCert('cert-python.png')">
-  <img src="cert-python.png" alt="LearnX Python Certificate">
-  <p>LearnX Python</p>
-</div>
+      menuToggle.textContent = isOpen ? 'Close' : 'Menu';
+    });
 
-	  
-<div class="cert-card" onclick="openCert('nptl-python.png')">
-  <img src="nptl-python.png" alt="NPTEL Python Certificate">
-  <p>Python (NPTEL)</p>
-</div>
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation');
+        menuToggle.textContent = 'Menu';
+      });
+    });
 
+    // Certificate preview
+    const modal = document.getElementById('certificateModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
 
-<div class="cert-card" onclick="openCert('nasscom-ai.png')">
-  <img src="nasscom-ai.png" alt="NASSCOM AI">
-  <p>AI (NASSCOM)</p>
-</div>
+    let previousFocus = null;
 
-<div class="cert-card" onclick="openCert('udamy-ai.png')">
-  <img src="udamy-ai.png" alt="Udemy AI">
-  <p>AI (Udemy)</p>
-</div>
+    document.querySelectorAll('[data-cert]').forEach(button => {
+      button.addEventListener('click', () => {
+        previousFocus = button;
 
-<div class="cert-card" onclick="openCert('generative_ai.png')">
-  <img src="generative_ai.png" alt="Generative Ai">
-  <p>Generative Ai</p>
-</div>
+        modalImage.src = button.dataset.cert;
+        modalImage.alt = button.dataset.title || 'Certificate preview';
 
-<div class="cert-card" onclick="openCert('Hackerank-java-basic.png')">
-  <img src="Hackerank-java-basic.png" alt="Hackerank-java-basic">
-  <p>Hackerank-java</p>
-</div>
-	  
-<div class="cert-card" onclick="openCert('java-fsd-eduskills.png')">
-  <img src="java-fsd-eduskills.png" alt="Java FSD">
-  <p>Java full stack</p>
-</div>
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
 
-<div class="cert-card" onclick="openCert('Nasscom-Acquiring data.png')">
-  <img src="Nasscom-Acquiring data.png" alt="Nasscom Acquiring-Data">
-  <p>Acquiring-Data (NASSCOM)</p>
-</div>
+        modalClose.focus();
+      });
+    });
 
-<div class="cert-card" onclick="openCert('ACITE_JFSD.jpeg')">
-  <img src="ACITE_JFSD.jpeg" alt="ACITE-JFSD">
-  <p>JAVA FSD(AICTE)</p>
-</div>
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImage.src = '';
+      document.body.style.overflow = '';
 
-<div class="cert-card" onclick="openCert('nptel-pedt.png')">
-  <img src="nptel-pedt.png" alt="Nptel-pedt">
-  <p>Nptel-PEDT</p>
-</div>
+      if (previousFocus) {
+        previousFocus.focus();
+      }
+    }
 
+    modalClose.addEventListener('click', closeModal);
 
-	  
-  </div>
-</section>
+    modal.addEventListener('click', event => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
 
-<!-- CERTIFICATE MODAL -->
-<div class="modal" id="modal" onclick="closeCert()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="close" onclick="closeCert()">×</span>
-    <img id="modalImg" alt="Certificate Preview">
-  </div>
-</div>
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
+    // Footer year
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+  </script>
 
-  <p>Email: pinnintidurgaprasad2005@gmail.com</p>
-  <p>Mobile: 7569595067</p>
-  <p>
-    GitHub:
-    <a href="https://github.com/pinnintidurgaprasad2005-afk" target="_blank">
-      pinnintidurgaprasad2005-afk
-    </a>
-  </p>
-</section>
-
-<script src="script.js"></script>
 </body>
 </html>
+```
